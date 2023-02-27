@@ -25,7 +25,14 @@ function tocaSom(letra){
     audio.play()
 }
 
-const adicionarEfeito = (letra) => document.getElementById(letra).classList.toggle('active')
+const adicionarEfeito = (letra) => {
+    const div = document.getElementById(letra)
+    div.classList.add('active')
+    setTimeout(() =>{
+        div.classList.remove('active')
+    },400)
+}
+
 
 function ativaDiv(event){
     const letra = event.type == 'click' ? event.target.id : event.key.toUpperCase()
